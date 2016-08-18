@@ -35,16 +35,27 @@ class LineString extends GeoJSON
         }
     }
 
+    /**
+     * Add a new coordinate to the LineString seqence.
+     * @param LatLong $coordinate
+     */
     public function addCoordinate(LatLong $coordinate)
     {
         $this->coordinates->push($coordinate);
     }
 
+    /**
+     * Exports the type specific schema element(s).
+     */
     public function export()
     {
         
     }
 
+    /**
+     * Validate the type specific schema element(s).
+     * @return boolean
+     */
     public function validate()
     {
         // LineString Type must have two or more coordinates.
