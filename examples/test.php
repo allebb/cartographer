@@ -67,7 +67,26 @@ foreach ($polygon_example['coordinates'] as $poly) {
     $linearRing->addRing($poly);
 }
 $polygon = new \Ballen\Cartographer\Polygon($linearRing);
-echo $polygon->generate();
+//echo $polygon->generate();
+
+
+/**
+ * Test a MultiPolygon type.
+ */
+$polygon_example2 = json_decode(file_get_contents(__DIR__ . '/polygon2.json'), true);
+
+// Create a LinearRing object to contain the polygon data.
+$linearRing2 = new \Ballen\Cartographer\Core\LinearRing();
+foreach ($polygon_example2['coordinates'] as $poly2) {
+    $linearRing2->addRing($poly2);
+}
+$polygon2 = new \Ballen\Cartographer\Polygon($linearRing2);
+
+$multipolygon_example = (new Ballen\Cartographer\MultiPolygon())
+    ->addPolygon($polygon)
+    ->addPolygon($polygon2);
+echo $multipolygon_example->generate();
+
 
 /**
  * Test a GeometryCollection type

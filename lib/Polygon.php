@@ -3,11 +3,12 @@
 namespace Ballen\Cartographer;
 
 use Ballen\Cartographer\Core\GeoJSONTypeInterface;
+use Ballen\Cartographer\Core\Multipliable;
 use Ballen\Cartographer\Core\GeoJSON;
 use Ballen\Cartographer\Core\LinearRing;
 use Ballen\Collection\Collection;
 
-class Polygon extends GeoJSON implements GeoJSONTypeInterface
+class Polygon extends GeoJSON implements GeoJSONTypeInterface, Multipliable
 {
 
     /**
@@ -36,6 +37,15 @@ class Polygon extends GeoJSON implements GeoJSONTypeInterface
         return [
             'coordinates' => $this->polygon->get(),
         ];
+    }
+
+    /**
+     * Export the polygon data as an array.
+     * @return array
+     */
+    public function exportArray()
+    {
+        return $this->polygon->get();
     }
 
     /**
