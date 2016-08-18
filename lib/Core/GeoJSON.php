@@ -2,9 +2,12 @@
 
 use Ballen\Cartographer\Exceptions\InvalidObjectTypeException;
 
-abstract class GeoJSON
+abstract class GeoJSON implements GeoJSONTypeInterface
 {
 
+    /**
+     * Supported GeoJSON types.
+     */
     const TYPE_POINT = "Point";
     const TYPE_MULTIPOINT = "MultiPoint";
     const TYPE_LINESTRING = "LineString";
@@ -26,20 +29,22 @@ abstract class GeoJSON
      */
     public function generate()
     {
-        $this->validate();
+        $this->validateSchema();
     }
 
     /**
-     * Validates the data and schema type requirements.
+     * Validates the GeoJSON schema.
      * @throws InvalidObjectTypeException
      */
-    private function validate()
+    private function validateSchema()
     {
 
-        $type_constants = (new \ReflectionClass)->getConstants();
-        var_dump($type_constants);
+        $type_constants = (new \ReflectionClass(__CLASS__))->getConstants();
         if (!in_array($this->type, $type_constants)) {
             throw new InvalidObjectTypeException(sprintf('The GeoJSON object type specified (%s) is not supported.', $this->type));
+        }
+        if (!$this->validate()) {
+            throw new TypeSchemaValidationException(sprintf('The GeoJSON type object failed to validate.', $this->type));
         }
     }
 }
