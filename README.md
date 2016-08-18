@@ -67,4 +67,4 @@ Code coverage can also be ran and a report generated (this does require XDebug t
 Support
 -------
 
-I am happy to provide support via. my personal email address, so if you need a hand drop me an email at: [ballen@bobbyallen.me]().
+I am happy to provide support via. my personal email address, so if you need a hand drop me an email at: [ballen@bobbyallen.me](mailto:ballen@bobbyallen.me).
