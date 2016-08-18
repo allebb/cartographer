@@ -1,1 +1,7 @@
 /nbproject
+/vendor
+/report
+composer.phar
+.DS_Store
+Thumbs.db
+!*.yml
