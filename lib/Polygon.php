@@ -4,7 +4,7 @@ namespace Ballen\Cartographer;
 
 use Ballen\Cartographer\Core\GeoJSONTypeInterface;
 use Ballen\Cartographer\Core\GeoJSON;
-use Ballen\Distical\Entities\LatLong;
+use Ballen\Cartographer\Core\LinearRing;
 use Ballen\Collection\Collection;
 
 class Polygon extends GeoJSON implements GeoJSONTypeInterface
@@ -17,34 +17,14 @@ class Polygon extends GeoJSON implements GeoJSONTypeInterface
     protected $type = GeoJSON::TYPE_POLYGON;
 
     /**
-     * The coordinates collection (of LatLong objects)
-     * @var Collection
+     * The LinearRing collection
+     * @var LinearRing
      */
-    private $coordinates;
+    private $polygon;
 
-    /**
-     * 
-     */
-    public function __construct($init = null)
+    public function __construct(LinearRing $polygon)
     {
-        $this->coordinates = new Collection;
-
-        if (is_array($init)) {
-            array_walk($init, function($i) {
-                if (is_a($i, LatLong::class)) {
-                    $this->addCoordinate($i);
-                }
-            });
-        }
-    }
-
-    /**
-     * Add a new coordinate to the Polygon seqence.
-     * @param LatLong $coordinate
-     */
-    public function addCoordinate(LatLong $coordinate)
-    {
-        $this->coordinates->push($coordinate);
+        $this->polygon = $polygon;
     }
 
     /**
@@ -53,13 +33,8 @@ class Polygon extends GeoJSON implements GeoJSONTypeInterface
      */
     public function export()
     {
-        $coords = [];
-        foreach ($this->coordinates->all()->toArray() as $c) {
-            $coords[] = [$c->lat(), $c->lng()];
-        }
-
         return [
-            'coordinates' => [$coords],
+            'coordinates' => $this->polygon->get(),
         ];
     }
 
@@ -69,10 +44,6 @@ class Polygon extends GeoJSON implements GeoJSONTypeInterface
      */
     public function validate()
     {
-        // MultiPoint Type can have one or more lat/lng coordinates.
-        if ($this->coordinates->count() < 1) {
-            return false;
-        }
         return true;
     }
 }

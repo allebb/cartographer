@@ -58,24 +58,19 @@ $multilinestring = new \Ballen\Cartographer\MultiLineString([
 /**
  * Test a polygon type.
  */
+// Load a complex polygon schema from a test file...
 $polygon_example = json_decode(file_get_contents(__DIR__ . '/polygon.json'), true);
-//die(var_dump($polygon_example));
-//die(var_dump($polygon_example->coordinates[0]));
-//$polygonCoords = json_decode($polygon_example->coordinates, true);
-//die(var_dump($polygone_example->coordinates));
-$polygon = new \Ballen\Cartographer\Polygon();
-//die(var_dump($polygon_example['coordinates']));
-foreach ($polygon_example['coordinates'] as $poly) {
-    //die(var_dump($polygon));
-    foreach ($poly as $ordinal) {
-        $polygon->addCoordinate(new LatLong($ordinal[0], $ordinal[1]));
-    }
-}
 
-//echo $polygon->generate();
+// Create a LinearRing object to contain the polygon data.
+$linearRing = new \Ballen\Cartographer\Core\LinearRing();
+foreach ($polygon_example['coordinates'] as $poly) {
+    $linearRing->addRing($poly);
+}
+$polygon = new \Ballen\Cartographer\Polygon($linearRing);
+echo $polygon->generate();
 
 /**
  * Test a GeometryCollection type
  */
 $geometryCollection_example = new Ballen\Cartographer\GeometryCollection([$linestring, $point]);
-echo $geometryCollection_example->generate();
+//echo $geometryCollection_example->generate();
