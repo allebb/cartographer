@@ -31,7 +31,16 @@ abstract class GeoJSON implements GeoJSONTypeInterface
     public function generate()
     {
         $this->validateSchema();
-        return $this->buildJson(true);
+        return $this->buildJson();
+    }
+
+    /**
+     * Generate a GeometryCollection member GeoJSON object.
+     * @return array
+     */
+    public function generateMember()
+    {
+        return array_merge(['type' => $this->type], $this->export());
     }
 
     /**

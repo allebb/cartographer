@@ -15,28 +15,21 @@ $testCoords = [
     new LatLong(51.48758, -0.06111),
     new LatLong(51.48267, -0.35328),
 ];
-
-$testCoords = [
-    new LatLong(51.51259, -0.12514),
-    new LatLong(51.51537, -0.01614),
-    new LatLong(51.48758, -0.06111),
-    new LatLong(51.48267, -0.35328),
-];
-$test = new \Ballen\Cartographer\LineString($testCoords);
-echo $test->generate();
+$linestring = new \Ballen\Cartographer\LineString($testCoords);
+//echo $linestring->generate();
 
 
 /**
  * Test adding a single Point.
  */
 $point = new \Ballen\Cartographer\Point(new LatLong(52.005052, 1.047551));
-echo $point->generate();
+//echo $point->generate();
 
 /**
  * Test a multipoint type.
  */
 $multipoint = new \Ballen\Cartographer\MultiPoint($testCoords);
-echo $multipoint->generate();
+//echo $multipoint->generate();
 
 /**
  * Test a multipointstring type.
@@ -59,4 +52,30 @@ $multilinestring = new \Ballen\Cartographer\MultiLineString([
     new LineString($testCoords),
     new LineString($roadCoords)]
 );
-echo $multilinestring->generate();
+//echo $multilinestring->generate();
+
+
+/**
+ * Test a polygon type.
+ */
+$polygon_example = json_decode(file_get_contents(__DIR__ . '/polygon.json'), true);
+//die(var_dump($polygon_example));
+//die(var_dump($polygon_example->coordinates[0]));
+//$polygonCoords = json_decode($polygon_example->coordinates, true);
+//die(var_dump($polygone_example->coordinates));
+$polygon = new \Ballen\Cartographer\Polygon();
+//die(var_dump($polygon_example['coordinates']));
+foreach ($polygon_example['coordinates'] as $poly) {
+    //die(var_dump($polygon));
+    foreach ($poly as $ordinal) {
+        $polygon->addCoordinate(new LatLong($ordinal[0], $ordinal[1]));
+    }
+}
+
+//echo $polygon->generate();
+
+/**
+ * Test a GeometryCollection type
+ */
+$geometryCollection_example = new Ballen\Cartographer\GeometryCollection([$linestring, $point]);
+echo $geometryCollection_example->generate();
