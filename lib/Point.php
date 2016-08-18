@@ -2,10 +2,12 @@
 
 namespace Ballen\Cartographer;
 
+use Ballen\Cartographer\Core\GeoJSONTypeInterface;
+use Ballen\Cartographer\Core\Multipliable;
 use Ballen\Cartographer\Core\GeoJSON;
 use Ballen\Distical\Entities\LatLong;
 
-class Point extends GeoJSON
+class Point extends GeoJSON implements GeoJSONTypeInterface, Multipliable
 {
 
     /**
@@ -41,6 +43,15 @@ class Point extends GeoJSON
                 $this->coordinate->lng()
             ]
         ];
+    }
+
+    /**
+     * Exports the type specific schema array (for use in MultiX types).
+     * @return array
+     */
+    public function exportArray()
+    {
+        return [$this->coordinate->lat(), $this->coordinate->lng()];
     }
 
     /**

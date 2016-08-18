@@ -2,11 +2,13 @@
 
 namespace Ballen\Cartographer;
 
+use Ballen\Cartographer\Core\GeoJSONTypeInterface;
+use Ballen\Cartographer\Core\Multipliable;
 use Ballen\Cartographer\Core\GeoJSON;
 use Ballen\Distical\Entities\LatLong;
 use Ballen\Collection\Collection;
 
-class LineString extends GeoJSON
+class LineString extends GeoJSON implements GeoJSONTypeInterface, Multipliable
 {
 
     /**
@@ -60,6 +62,19 @@ class LineString extends GeoJSON
         return [
             'coordinates' => $coords,
         ];
+    }
+
+    /**
+     * Exports the type specific schema array (for use in MultiX types).
+     * @return array
+     */
+    public function exportArray()
+    {
+        $coords = [];
+        foreach ($this->coordinates->all()->toArray() as $c) {
+            $coords[] = [$c->lat(), $c->lng()];
+        }
+        return $coords;
     }
 
     /**
