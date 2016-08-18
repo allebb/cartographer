@@ -1,7 +1,5 @@
 <?php namespace Ballen\Cartographer\Core;
 
-use Ballen\Cartographer\Exceptions\InvalidObjectTypeException;
-
 abstract class GeoJSON implements GeoJSONTypeInterface
 {
 
@@ -41,10 +39,10 @@ abstract class GeoJSON implements GeoJSONTypeInterface
 
         $type_constants = (new \ReflectionClass(__CLASS__))->getConstants();
         if (!in_array($this->type, $type_constants)) {
-            throw new InvalidObjectTypeException(sprintf('The GeoJSON object type specified (%s) is not supported.', $this->type));
+            throw new \Ballen\Cartographer\Exceptions\InvalidObjectTypeException(sprintf('The GeoJSON object type specified (%s) is not supported.', $this->type));
         }
         if (!$this->validate()) {
-            throw new TypeSchemaValidationException(sprintf('The GeoJSON type object failed to validate.', $this->type));
+            throw new \Ballen\Cartographer\Exceptions\TypeSchemaValidationException('The GeoJSON type object failed to validate.');
         }
     }
 }

@@ -11,5 +11,5 @@ interface GeoJSONTypeInterface
     /**
      * Local Type validation to ensure that the Type Schema validates accordingly.
      */
-    public function validateType();
+    public function validate();
 }
