@@ -1,4 +1,6 @@
-<?php namespace Ballen\Cartographer\Core;
+<?php
+
+namespace Ballen\Cartographer\Core;
 
 abstract class GeoJSON implements GeoJSONTypeInterface
 {
@@ -29,7 +31,7 @@ abstract class GeoJSON implements GeoJSONTypeInterface
     public function generate()
     {
         $this->validateSchema();
-        return $this->buildJson();
+        return $this->buildJson(true);
     }
 
     /**
@@ -51,9 +53,12 @@ abstract class GeoJSON implements GeoJSONTypeInterface
      * Constructs the JSON object.
      * @return string
      */
-    private function buildJson()
+    private function buildJson($pretty = false)
     {
         $data = array_merge(['type' => $this->type], $this->export());
+        if ($pretty) {
+            return json_encode($data, JSON_PRETTY_PRINT);
+        }
         return json_encode($data);
     }
 }

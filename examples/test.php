@@ -1,12 +1,12 @@
 <?php
-require '/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 /**
  * 
  */
 use \Ballen\Distical\Entities\LatLong;
 
 /**
- * Test adding some example coords to a LineString type GeoJSON object
+ * Test a LineString type.
  */
 $testCoords = [
     new LatLong(51.51259, -0.12514),
@@ -16,3 +16,16 @@ $testCoords = [
 ];
 $test = new \Ballen\Cartographer\LineString($testCoords);
 echo $test->generate();
+
+
+/**
+ * Test adding a single Point.
+ */
+$point = new \Ballen\Cartographer\Point(new LatLong(52.005052, 1.047551));
+echo $point->generate();
+
+/**
+ * Test a multipoint type.
+ */
+$multipoint = new \Ballen\Cartographer\MultiPoint($testCoords);
+echo $multipoint->generate();

@@ -1,4 +1,6 @@
-<?php namespace Ballen\Cartographer\Exceptions;
+<?php
+
+namespace Ballen\Cartographer\Exceptions;
 
 class TypeSchemaValidationException extends \Exception
 {

@@ -6,7 +6,7 @@ use Ballen\Cartographer\Core\GeoJSON;
 use Ballen\Distical\Entities\LatLong;
 use Ballen\Collection\Collection;
 
-class GeometryCollection extends GeoJSON
+class FeatureCollection extends GeoJSON
 {
     
 }

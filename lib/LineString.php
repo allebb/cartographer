@@ -1,4 +1,6 @@
-<?php namespace Ballen\Cartographer;
+<?php
+
+namespace Ballen\Cartographer;
 
 use Ballen\Cartographer\Core\GeoJSON;
 use Ballen\Distical\Entities\LatLong;

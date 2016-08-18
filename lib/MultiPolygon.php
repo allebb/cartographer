@@ -1,6 +1,9 @@
-<?php namespace Ballen\Cartographer;
+<?php
 
-use Core\GeoJSON;
+namespace Ballen\Cartographer;
+
+use Ballen\Cartographer\Core\GeoJSON;
+use Ballen\Distical\Entities\LatLong;
 
 class MultiPolygon extends GeoJSON
 {

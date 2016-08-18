@@ -1,4 +1,6 @@
-<?php namespace Ballen\Cartographer\Core;
+<?php
+
+namespace Ballen\Cartographer\Core;
 
 interface GeoJSONTypeInterface
 {
