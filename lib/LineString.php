@@ -46,10 +46,18 @@ class LineString extends GeoJSON
 
     /**
      * Exports the type specific schema element(s).
+     * @return array
      */
     public function export()
     {
-        
+        $coords = [];
+        foreach ($this->coordinates->all()->toArray() as $c) {
+            $coords[] = [$c->lat(), $c->lng()];
+        }
+
+        return [
+            'coordinates' => $coords,
+        ];
     }
 
     /**

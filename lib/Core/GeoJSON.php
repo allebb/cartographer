@@ -24,10 +24,12 @@ abstract class GeoJSON implements GeoJSONTypeInterface
 
     /**
      * Generates the GeoJSON object.
+     * @return string
      */
     public function generate()
     {
         $this->validateSchema();
+        return $this->buildJson();
     }
 
     /**
@@ -36,7 +38,6 @@ abstract class GeoJSON implements GeoJSONTypeInterface
      */
     private function validateSchema()
     {
-
         $type_constants = (new \ReflectionClass(__CLASS__))->getConstants();
         if (!in_array($this->type, $type_constants)) {
             throw new \Ballen\Cartographer\Exceptions\InvalidObjectTypeException(sprintf('The GeoJSON object type specified (%s) is not supported.', $this->type));
@@ -44,5 +45,15 @@ abstract class GeoJSON implements GeoJSONTypeInterface
         if (!$this->validate()) {
             throw new \Ballen\Cartographer\Exceptions\TypeSchemaValidationException('The GeoJSON type object failed to validate.');
         }
+    }
+
+    /**
+     * Constructs the JSON object.
+     * @return string
+     */
+    private function buildJson()
+    {
+        $data = array_merge(['type' => $this->type], $this->export());
+        return json_encode($data);
     }
 }

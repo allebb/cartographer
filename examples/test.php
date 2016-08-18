@@ -1,6 +1,5 @@
 <?php
 require '/../vendor/autoload.php';
-
 /**
  * 
  */
@@ -16,4 +15,4 @@ $testCoords = [
     new LatLong(51.48267, -0.35328),
 ];
 $test = new \Ballen\Cartographer\LineString($testCoords);
-$test->generate();
+echo $test->generate();
