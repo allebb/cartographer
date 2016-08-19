@@ -23,7 +23,7 @@ $linestring = new \Ballen\Cartographer\LineString($testCoords);
  * Test adding a single Point.
  */
 $point = new \Ballen\Cartographer\Point(new LatLong(51.882034, 0.230355));
-echo $point->generate();
+//echo $point->generate();
 
 /**
  * Test a multipoint type.
