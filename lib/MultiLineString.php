@@ -27,7 +27,7 @@ class MultiLineString extends GeoJSON implements GeoJSONTypeInterface
      * Create a new instance of the MultiPointString GeoJSON schema
      * @param array $linestrings
      */
-    public function __construct($init)
+    public function __construct($init = [])
     {
         $this->linestrings = new Collection;
 
@@ -56,7 +56,7 @@ class MultiLineString extends GeoJSON implements GeoJSONTypeInterface
     public function export()
     {
         $linestrings = [];
-        
+
         foreach ($this->linestrings->all()->toArray() as $l) {
             $linestrings[] = $l->exportArray();
         }
@@ -71,6 +71,9 @@ class MultiLineString extends GeoJSON implements GeoJSONTypeInterface
      */
     public function validate()
     {
+        if ($this->linestrings->count() < 2) {
+            return false;
+        }
         return true;
     }
 }

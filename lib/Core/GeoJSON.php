@@ -65,9 +65,6 @@ abstract class GeoJSON implements GeoJSONTypeInterface
     private function buildJson($pretty = false)
     {
         $data = array_merge(['type' => $this->type], $this->export());
-        if ($pretty) {
-            return json_encode($data, JSON_PRETTY_PRINT);
-        }
         return json_encode($data);
     }
 }

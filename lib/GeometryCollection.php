@@ -21,7 +21,7 @@ class GeometryCollection extends GeoJSON implements GeoJSONTypeInterface
      */
     private $geometries;
 
-    public function __construct($init)
+    public function __construct($init = [])
     {
         $this->geometries = new Collection;
 
