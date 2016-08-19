@@ -85,7 +85,7 @@ $polygon2 = new \Ballen\Cartographer\Polygon($linearRing2);
 $multipolygon_example = (new Ballen\Cartographer\MultiPolygon())
     ->addPolygon($polygon)
     ->addPolygon($polygon2);
-echo $multipolygon_example->generate();
+//echo $multipolygon_example->generate();
 
 
 /**
@@ -93,3 +93,12 @@ echo $multipolygon_example->generate();
  */
 $geometryCollection_example = new Ballen\Cartographer\GeometryCollection([$linestring, $point]);
 //echo $geometryCollection_example->generate();
+
+/**
+ * Test a Feature type
+ */
+$feature_example = new \Ballen\Cartographer\Feature($point, [
+    'name' => 'Example point',
+    'link' => 'http://example.com/point',
+    ]);
+echo $feature_example->generate();
