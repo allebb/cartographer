@@ -16,7 +16,7 @@ abstract class GeoJSON implements GeoJSONTypeInterface
     const TYPE_MULTIPOLYGON = "MultiPolygon";
     const TYPE_GEOMETRYCOLLECTION = "GeometryCollection";
     const TYPE_FEATURE = "Feature";
-    const TYPE_COLLECTION = "FeatureCollection";
+    const TYPE_FEATURECOLLECTION = "FeatureCollection";
 
     /**
      * The GeoJSON Object Type

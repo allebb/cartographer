@@ -101,4 +101,16 @@ $feature_example = new \Ballen\Cartographer\Feature($point, [
     'name' => 'Example point',
     'link' => 'http://example.com/point',
     ]);
-echo $feature_example->generate();
+//echo $feature_example->generate();
+
+/**
+ * Test a FeatureCollection tpye
+ */
+$featureCollection_example = new Ballen\Cartographer\FeatureCollection();
+$featureCollection_example->addFeature($feature_example);
+$feature_example2 = new \Ballen\Cartographer\Feature($polygon, [
+    'name' => 'A polygon example',
+    'link' => 'http://example.com/polygon'
+]);
+$featureCollection_example->addFeature($feature_example2);
+echo $featureCollection_example->generate();

@@ -2,11 +2,73 @@
 
 namespace Ballen\Cartographer;
 
+use Ballen\Cartographer\Core\GeoJSONTypeInterface;
 use Ballen\Cartographer\Core\GeoJSON;
-use Ballen\Distical\Entities\LatLong;
+use Ballen\Cartographer\Feature;
 use Ballen\Collection\Collection;
 
-class FeatureCollection extends GeoJSON
+class FeatureCollection extends GeoJSON implements GeoJSONTypeInterface
 {
-    
+
+    /**
+     * The GeoJSON schema type
+     * @var string
+     */
+    protected $type = GeoJSON::TYPE_FEATURECOLLECTION;
+
+    /**
+     * The feature collection (of Feature Objects)
+     * @var Collection
+     */
+    private $features;
+
+    public function __construct($init)
+    {
+        $this->features = new Collection;
+
+        if (is_array($init)) {
+            array_walk($init, function($i) {
+                if (is_a($i, Feature::class)) {
+                    $this->addFeature($i);
+                }
+            });
+        }
+    }
+
+    /**
+     * Add a new Feature object to the FeatureCollection.
+     * @param Feature $geometry
+     */
+    public function addFeature(Feature $feature)
+    {
+        $this->features->push($feature);
+    }
+
+    /**
+     * Exports the type specific schema element(s).
+     * @return array
+     */
+    public function export()
+    {
+        $features = [];
+        foreach ($this->features->all()->toArray() as $feature) {
+            $features[] = $feature->generateMember();
+        }
+        return [
+            'features' => $features,
+        ];
+    }
+
+    /**
+     * Validate the type specific schema element(s).
+     * @return boolean
+     */
+    public function validate()
+    {
+        // FeatureCollection type must have one or more Feature types.
+        if ($this->features->count() > 0) {
+            return true;
+        }
+        return false;
+    }
 }
