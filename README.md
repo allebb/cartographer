@@ -1,5 +1,12 @@
 # Cartographer
 
+[![Build Status](https://scrutinizer-ci.com/g/bobsta63/cartographer/badges/build.png?b=master)](https://scrutinizer-ci.com/g/bobsta63/metar/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/bobsta63/cartographer/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/bobsta63/metar/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bobsta63/cartographer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bobsta63/cartographer/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/ballen/cartographer/v/stable)](https://packagist.org/packages/ballen/cartographer)
+[![Latest Unstable Version](https://poser.pugx.org/ballen/cartographer/v/unstable)](https://packagist.org/packages/ballen/cartographer)
+[![License](https://poser.pugx.org/ballen/cartographer/license)](https://packagist.org/packages/ballen/cartographer)
+
 Cartographer is a PHP library providing the ability to programmatically generate GeoJSON objects.
 
 GeoJSON is a format for encoding a variety of geographic data structures. A GeoJSON object may represent a geometry, a feature, or a collection of features. GeoJSON supports the following geometry types: ``Point``, ``LineString``, ``Polygon``, ``MultiPoint``, ``MultiLineString``, ``MultiPolygon``, and ``GeometryCollection``. Features in GeoJSON contain a geometry object and additional properties, and a feature collection represents a list of features.
