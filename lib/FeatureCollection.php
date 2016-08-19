@@ -22,7 +22,7 @@ class FeatureCollection extends GeoJSON implements GeoJSONTypeInterface
      */
     private $features;
 
-    public function __construct($init)
+    public function __construct($init = null)
     {
         $this->features = new Collection;
 

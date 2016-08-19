@@ -22,8 +22,8 @@ $linestring = new \Ballen\Cartographer\LineString($testCoords);
 /**
  * Test adding a single Point.
  */
-$point = new \Ballen\Cartographer\Point(new LatLong(52.005052, 1.047551));
-//echo $point->generate();
+$point = new \Ballen\Cartographer\Point(new LatLong(51.882034, 0.230355));
+echo $point->generate();
 
 /**
  * Test a multipoint type.
@@ -113,4 +113,4 @@ $feature_example2 = new \Ballen\Cartographer\Feature($polygon, [
     'link' => 'http://example.com/polygon'
 ]);
 $featureCollection_example->addFeature($feature_example2);
-echo $featureCollection_example->generate();
+//echo $featureCollection_example->generate();

@@ -39,8 +39,8 @@ class Point extends GeoJSON implements GeoJSONTypeInterface, Multipliable
     {
         return [
             'coordinates' => [
-                $this->coordinate->lat(),
-                $this->coordinate->lng()
+                $this->coordinate->lng(),
+                $this->coordinate->lat()      
             ]
         ];
     }
@@ -51,7 +51,7 @@ class Point extends GeoJSON implements GeoJSONTypeInterface, Multipliable
      */
     public function exportArray()
     {
-        return [$this->coordinate->lat(), $this->coordinate->lng()];
+        return [$this->coordinate->lng(), $this->coordinate->lat()];
     }
 
     /**
