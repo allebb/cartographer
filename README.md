@@ -1,7 +1,7 @@
 # Cartographer
 
-[![Build Status](https://scrutinizer-ci.com/g/bobsta63/cartographer/badges/build.png?b=master)](https://scrutinizer-ci.com/g/bobsta63/metar/build-status/master)
-[![Code Coverage](https://scrutinizer-ci.com/g/bobsta63/cartographer/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/bobsta63/metar/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/bobsta63/cartographer/badges/build.png?b=master)](https://scrutinizer-ci.com/g/bobsta63/cartographer/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/bobsta63/cartographer/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/bobsta63/cartographer/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bobsta63/cartographer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bobsta63/cartographer/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/ballen/cartographer/v/stable)](https://packagist.org/packages/ballen/cartographer)
 [![Latest Unstable Version](https://poser.pugx.org/ballen/cartographer/v/unstable)](https://packagist.org/packages/ballen/cartographer)
