@@ -16,20 +16,20 @@ $testCoords = [
     new LatLong(51.48267, -0.35328),
 ];
 $linestring = new \Ballen\Cartographer\LineString($testCoords);
-//echo $linestring->generate();
+echo $linestring->generate();
 
 
 /**
  * Test adding a single Point.
  */
 $point = new \Ballen\Cartographer\Point(new LatLong(51.882034, 0.230355));
-//echo $point->generate();
+echo $point->generate();
 
 /**
  * Test a multipoint type.
  */
 $multipoint = new \Ballen\Cartographer\MultiPoint($testCoords);
-//echo $multipoint->generate();
+echo $multipoint->generate();
 
 /**
  * Test a multipointstring type.
@@ -52,7 +52,7 @@ $multilinestring = new \Ballen\Cartographer\MultiLineString([
     new LineString($testCoords),
     new LineString($roadCoords)]
 );
-//echo $multilinestring->generate();
+echo $multilinestring->generate();
 
 
 /**
@@ -67,7 +67,7 @@ foreach ($polygon_example['coordinates'] as $poly) {
     $linearRing->addRing($poly);
 }
 $polygon = new \Ballen\Cartographer\Polygon($linearRing);
-//echo $polygon->generate();
+echo $polygon->generate();
 
 
 /**
@@ -85,14 +85,14 @@ $polygon2 = new \Ballen\Cartographer\Polygon($linearRing2);
 $multipolygon_example = (new Ballen\Cartographer\MultiPolygon())
     ->addPolygon($polygon)
     ->addPolygon($polygon2);
-//echo $multipolygon_example->generate();
+echo $multipolygon_example->generate();
 
 
 /**
  * Test a GeometryCollection type
  */
 $geometryCollection_example = new Ballen\Cartographer\GeometryCollection([$linestring, $point]);
-//echo $geometryCollection_example->generate();
+echo $geometryCollection_example->generate();
 
 /**
  * Test a Feature type
@@ -101,7 +101,7 @@ $feature_example = new \Ballen\Cartographer\Feature($point, [
     'name' => 'Example point',
     'link' => 'http://example.com/point',
     ]);
-//echo $feature_example->generate();
+echo $feature_example->generate();
 
 /**
  * Test a FeatureCollection tpye
@@ -113,4 +113,4 @@ $feature_example2 = new \Ballen\Cartographer\Feature($polygon, [
     'link' => 'http://example.com/polygon'
 ]);
 $featureCollection_example->addFeature($feature_example2);
-//echo $featureCollection_example->generate();
+echo $featureCollection_example->generate();

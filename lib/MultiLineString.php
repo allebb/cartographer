@@ -8,6 +8,18 @@ use Ballen\Cartographer\LineString;
 use Ballen\Distical\Entities\LatLong;
 use Ballen\Collection\Collection;
 
+/**
+ * Cartographer
+ *
+ * Cartographer is a PHP library providing the ability to programmatically
+ * generate GeoJSON objects.
+ *
+ * @author Bobby Allen <ballen@bobbyallen.me>
+ * @license http://www.gnu.org/licenses/gpl-3.0.html
+ * @link https://github.com/bobsta63/cartographer
+ * @link http://www.bobbyallen.me
+ *
+ */
 class MultiLineString extends GeoJSON implements GeoJSONTypeInterface
 {
 
