@@ -139,7 +139,6 @@ echo $feature->generate();
 ```
 
 Check out the GitHub Gist rendition of the GeoJSON output: https://gist.github.com/bobsta63/a1dfa013273cc75ce061a13250ae6683
-```
 
 #### Feature Collection
 
