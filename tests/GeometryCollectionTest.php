@@ -5,7 +5,7 @@ use Ballen\Cartographer\Core\LinearRing;
 use Ballen\Cartographer\Polygon;
 use Ballen\Cartographer\MultiPolygon;
 use Ballen\Cartographer\GeometryCollection;
-use Ballen\Distical\Entities\LatLong;
+use Ballen\Cartographer\Core\LatLong;
 
 class GeometryCollectionTest extends PHPUnit_Framework_TestCase
 {

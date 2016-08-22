@@ -1,6 +1,6 @@
 <?php
 use Ballen\Cartographer\LineString;
-use Ballen\Distical\Entities\LatLong;
+use Ballen\Cartographer\Core\LatLong;
 
 class LineStringTest extends PHPUnit_Framework_TestCase
 {

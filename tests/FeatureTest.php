@@ -1,7 +1,7 @@
 <?php
 use Ballen\Cartographer\LineString;
 use Ballen\Cartographer\Feature;
-use Ballen\Distical\Entities\LatLong;
+use Ballen\Cartographer\Core\LatLong;
 
 class FeatureTest extends PHPUnit_Framework_TestCase
 {

@@ -5,7 +5,7 @@ namespace Ballen\Cartographer;
 use Ballen\Cartographer\Core\GeoJSON;
 use Ballen\Cartographer\Core\GeoJSONTypeInterface;
 use Ballen\Cartographer\LineString;
-use Ballen\Distical\Entities\LatLong;
+use Ballen\Cartographer\Core\LatLong;
 use Ballen\Collection\Collection;
 
 /**

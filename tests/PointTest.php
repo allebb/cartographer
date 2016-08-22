@@ -1,6 +1,6 @@
 <?php
 use Ballen\Cartographer\Point;
-use Ballen\Distical\Entities\LatLong;
+use Ballen\Cartographer\Core\LatLong;
 
 class PointTest extends PHPUnit_Framework_TestCase
 {

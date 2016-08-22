@@ -2,7 +2,7 @@
 use Ballen\Cartographer\LineString;
 use Ballen\Cartographer\Feature;
 use Ballen\Cartographer\FeatureCollection;
-use Ballen\Distical\Entities\LatLong;
+use Ballen\Cartographer\Core\LatLong;
 
 class FeatureCollectionTest extends PHPUnit_Framework_TestCase
 {
