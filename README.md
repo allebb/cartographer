@@ -11,6 +11,8 @@ Cartographer is a PHP library providing the ability to programmatically generate
 
 GeoJSON is a format for encoding a variety of geographic data structures. A GeoJSON object may represent a geometry, a feature, or a collection of features. GeoJSON supports the following geometry types: ``Point``, ``LineString``, ``Polygon``, ``MultiPoint``, ``MultiLineString``, ``MultiPolygon``, and ``GeometryCollection``. Features in GeoJSON contain a geometry object and additional properties, and a feature collection represents a list of features.
 
+Cartographer was written to adhear to the GeoJSON specification, information can be found here: http://geojson.org/geojson-spec.html
+
 Requirements
 ------------
 
@@ -55,11 +57,7 @@ echo $point->generate();
 // {"type":"Point","coordinates":[1.045936,52.005523]}
 ```
 
-The constructed GitHub GeoJSON map looks as follows:
-
-```geojson
-{"type":"Point","coordinates":[1.045936,52.005523]}
-```
+Check out the GitHub Gist rendition of the GeoJSON output: https://gist.github.com/bobsta63/55f059efbd708be130112b6d39b16406
 
 ### Linestring
 
@@ -87,11 +85,17 @@ echo $linestring->generate();
 // {"type":"LineString","coordinates":[[1.044497,51.973683],[1.044134,51.974067],[1.045795,51.974355],[1.049768,51.97501],[1.055869,51.976018],[1.05606,51.976195],[1.056083,51.976432],[1.056036,51.976774],[1.056115,51.977023],[1.056379,51.977107],[1.056658,51.977102]]}
 ```
 
-The constructed GitHub GeoJSON map looks as follows:
+Check out the GitHub Gist rendition of the GeoJSON output: https://gist.github.com/bobsta63/ec422a00b877e28a3d6913df68c5954c
 
-```geojson
-{"type":"LineString","coordinates":[[1.044497,51.973683],[1.044134,51.974067],[1.045795,51.974355],[1.049768,51.97501],[1.055869,51.976018],[1.05606,51.976195],[1.056083,51.976432],[1.056036,51.976774],[1.056115,51.977023],[1.056379,51.977107],[1.056658,51.977102]]}
-```
+#### Polygon
+
+A Polygon type object, contains a list of coordinates, the first and last coordinate must match. For Polygons with multiple rings, the first must be the exterior ring and any others must be interior rings or holes.
+
+
+
+#### Other examples
+
+Other examples of the types of GeoJSON object type, see the [examples/test.php](https://github.com/bobsta63/cartographer/blob/master/examples/test.php) file.
 
 Tests and coverage
 ------------------
