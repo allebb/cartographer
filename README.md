@@ -91,6 +91,28 @@ Check out the GitHub Gist rendition of the GeoJSON output: https://gist.github.c
 
 A Polygon type object, contains a list of coordinates, the first and last coordinate must match. For Polygons with multiple rings, the first must be the exterior ring and any others must be interior rings or holes.
 
+```php
+use Ballen\Cartographer\Core\LatLong;
+use Ballen\Cartographer\Polygon;
+use Ballen\Cartographer\Core\LinearRing;
+
+$points = [
+    (new LatLong(52.064761, 1.174470))->lngLatArray(),
+    (new LatLong(52.065045, 1.176098))->lngLatArray(),
+    (new LatLong(52.064964, 1.176156))->lngLatArray(),
+    (new LatLong(52.065172, 1.177106))->lngLatArray(),
+    (new LatLong(52.064146, 1.177594))->lngLatArray(),
+    (new LatLong(52.063968, 1.176768))->lngLatArray(),
+    (new LatLong(52.063714, 1.174875))->lngLatArray(),
+    (new LatLong(52.064761, 1.174470))->lngLatArray(),
+];
+$linestring = new Polygon((new LinearRing())->addRing($points));
+echo $linestring->generate();
+// {"type":"Polygon","coordinates":[[[1.17447,52.064761],[1.176098,52.065045],[1.176156,52.064964],[1.177106,52.065172],[1.177594,52.064146],[1.176768,52.063968],[1.174875,52.063714],[1.17447,52.064761]]]}
+```
+
+Check out the GitHub Gist rendition of the GeoJSON object: https://gist.github.com/bobsta63/30dd0db2a33b763309e64af8cfe3e33c
+
 
 
 #### Other examples
