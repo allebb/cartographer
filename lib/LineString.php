@@ -68,7 +68,7 @@ class LineString extends GeoJSON implements GeoJSONTypeInterface, Multipliable
     {
         $coords = [];
         foreach ($this->coordinates->all()->toArray() as $c) {
-            $coords[] = [$c->lng(), $c->lat()];
+            $coords[] = $c->lngLatArray();
         }
 
         return [
@@ -84,7 +84,7 @@ class LineString extends GeoJSON implements GeoJSONTypeInterface, Multipliable
     {
         $coords = [];
         foreach ($this->coordinates->all()->toArray() as $c) {
-            $coords[] = [$c->lng(), $c->lat()];
+            $coords[] = $c->lngLatArray();
         }
         return $coords;
     }

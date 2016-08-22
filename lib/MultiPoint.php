@@ -66,7 +66,7 @@ class MultiPoint extends GeoJSON
     {
         $coords = [];
         foreach ($this->coordinates->all()->toArray() as $c) {
-            $coords[] = [$c->lng(), $c->lat()];
+            $coords[] = $c->lngLatArray();
         }
 
         return [
