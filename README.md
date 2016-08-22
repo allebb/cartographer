@@ -113,7 +113,73 @@ echo $linestring->generate();
 
 Check out the GitHub Gist rendition of the GeoJSON object: https://gist.github.com/bobsta63/30dd0db2a33b763309e64af8cfe3e33c
 
+#### Feature
 
+A feature enables you to plot a single GeoJSON object on a map with associated properties, Google Maps enable you to render ``Feture`` and ``FeatureCollection`` types.
+
+A example of a ``Point`` feature type is as follows:
+
+```php
+use Ballen\Cartographer\Core\LatLong;
+use Ballen\Cartographer\Feature;
+use Ballen\Cartographer\Point;
+
+$feature = new Feature(new Point(new LatLong(52.063186, 1.157385)), [
+    // Your own personal marker points (appear when you click on the Feature point)
+    'Park' => 'Christchurch Park',
+    'Post code' => 'IP4 2BX',
+    'Link' => 'http://focp.org.uk/',
+    // Optional Mapbox supported properties (See: https://www.mapbox.com/help/markers/)
+    'marker-color' => '#3bb2d0', // A light blue marker colour
+    'marker-symbol' => 'park',
+    'marker-size' => 'large',
+]);
+echo $feature->generate();
+// {"type":"Feature","geometry":{"type":"Point","coordinates":[1.157385,52.063186]},"properties":{"Park":"Christchurch Park","Post code":"IP4 2BX","Link":"http:\/\/focp.org.uk\/","marker-color":"#3bb2d0","marker-symbol":"park","marker-size":"large"}}
+```
+
+Check out the GitHub Gist rendition of the GeoJSON output: https://gist.github.com/bobsta63/a1dfa013273cc75ce061a13250ae6683
+```
+
+#### Feature Collection
+
+A feature collection can contain any number of GeoJSON objects with their own properties, all of the features in a collection with their own properties.
+
+```php
+use Ballen\Cartographer\Core\LatLong;
+use Ballen\Cartographer\Feature;
+use Ballen\Cartographer\Point;
+
+$park = new Feature(new Point(new LatLong(52.063186, 1.157385)), [
+    // Your own personal marker points (appear when you click on the Feature point)
+    'Park' => 'Christchurch Park',
+    'Post code' => 'IP4 2BX',
+    'Link' => 'http://focp.org.uk/',
+    // Optional Mapbox supported properties (See: https://www.mapbox.com/help/markers/)
+    'marker-color' => '#3bb2d0', // A light blue marker colour
+    'marker-symbol' => 'park',
+    'marker-size' => 'large',
+]);
+
+// Train Station Specific codes
+$station_properties = [
+    'marker-color' => '#F6546A',
+    'marker-symbol' => 'rail',
+    'marker-size' => 'medium'
+];
+
+// Set some train stations with their own names (merge the standard train station details)
+$station_central = new Feature(new Point(new LatLong(52.050743, 1.143012)), array_merge($station_properties, ['Name' => 'Ipswich Train Station']));
+$station_derbyroad = new Feature(new Point(new LatLong(52.050808, 1.182638)), array_merge($station_properties, ['Name' => 'Derby Road Station']));
+$station_westerfield = new Feature(new Point(new LatLong(52.081026, 1.166773)), array_merge($station_properties, ['Name' => 'Westerfield Train Station']));
+
+// Create the new collection and add each of the GeoJSON objects to it...
+$collection = new Ballen\Cartographer\FeatureCollection([$station_central, $park, $station_westerfield, $station_derbyroad]);
+echo $collection->generate();
+// {"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[1.143012,52.050743]},"properties":{"marker-color":"#F6546A","marker-symbol":"rail","marker-size":"medium","Name":"Ipswich Train Station"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[1.157385,52.063186]},"properties":{"Park":"Christchurch Park","Post code":"IP4 2BX","Link":"http:\/\/focp.org.uk\/","marker-color":"#3bb2d0","marker-symbol":"park","marker-size":"large"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[1.166773,52.081026]},"properties":{"marker-color":"#F6546A","marker-symbol":"rail","marker-size":"medium","Name":"Westerfield Train Station"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[1.182638,52.050808]},"properties":{"marker-color":"#F6546A","marker-symbol":"rail","marker-size":"medium","Name":"Derby Road Station"}}]}
+```
+
+Check out the GitHub Gist rendition of the GeoJSON output: https://gist.github.com/bobsta63/1802d538814ed0875ab05060a439b774
 
 #### Other examples
 
