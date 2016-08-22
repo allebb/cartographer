@@ -42,10 +42,55 @@ Then install the package by running the ``composer update ballen/cartographer`` 
 Example usage
 -------------
 
+### Point
+
+The "Point" type is the most basic to construct, this example shows an example of plotting a single point on a map.
+
 ```php
-/**
-* TBC
-*/
+use Ballen\Cartographer\Core\LatLong;
+use Ballen\Cartographer\Point;
+
+$point = new Point(new LatLong(52.005523, 1.045936));
+echo $point->generate();
+// {"type":"Point","coordinates":[1.045936,52.005523]}
+```
+
+The constructed GitHub GeoJSON map looks as follows:
+
+```geojson
+{"type":"Point","coordinates":[1.045936,52.005523]}
+```
+
+### Linestring
+
+The "LineString" type contains a list of geographic points (Lat/Longs) of which are joined together to display a line.
+
+```php
+use Ballen\Cartographer\Core\LatLong;
+use Ballen\Cartographer\LineString;
+
+$points = [
+    new LatLong(51.973683,1.044497),
+    new LatLong(51.974067,1.044134),
+    new LatLong(51.974355,1.045795),
+    new LatLong(51.975010,1.049768),
+    new LatLong(51.976018,1.055869),
+    new LatLong(51.976195,1.056060),
+    new LatLong(51.976432,1.056083),
+    new LatLong(51.976774,1.056036),
+    new LatLong(51.977023,1.056115),
+    new LatLong(51.977107,1.056379),
+    new LatLong(51.977102,1.056658),
+ ];
+$linestring = new LineString($points);
+echo $linestring->generate();
+// {"type":"LineString","coordinates":[[1.044497,51.973683],[1.044134,51.974067],[1.045795,51.974355],[1.049768,51.97501],[1.055869,51.976018],[1.05606,51.976195],[1.056083,51.976432],[1.056036,51.976774],[1.056115,51.977023],[1.056379,51.977107],[1.056658,51.977102]]}
+```
+
+The constructed GitHub GeoJSON map looks as follows:
+
+```geojson
+{"type":"LineString","coordinates":[[1.044497,51.973683],[1.044134,51.974067],[1.045795,51.974355],[1.049768,51.97501],[1.055869,51.976018],[1.05606,51.976195],[1.056083,51.976432],[1.056036,51.976774],[1.056115,51.977023],[1.056379,51.977107],[1.056658,51.977102]]}
 ```
 
 Tests and coverage
