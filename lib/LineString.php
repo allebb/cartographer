@@ -38,7 +38,7 @@ class LineString extends GeoJSON implements GeoJSONTypeInterface, Multipliable
     /**
      * 
      */
-    public function __construct($init)
+    public function __construct($init = [])
     {
         $this->coordinates = new Collection;
 
