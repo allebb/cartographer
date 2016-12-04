@@ -40,7 +40,7 @@ class MultiPoint extends GeoJSON
         $this->coordinates = new Collection;
 
         if (is_array($init)) {
-            array_walk($init, function($i) {
+            array_walk($init, function($item) {
                 if (is_a($item, LatLong::class)) {
                     $this->addCoordinate($item);
                 }
