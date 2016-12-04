@@ -1,8 +1,8 @@
 # Cartographer
 
-[![Build Status](https://scrutinizer-ci.com/g/bobsta63/cartographer/badges/build.png?b=master)](https://scrutinizer-ci.com/g/bobsta63/cartographer/build-status/master)
-[![Code Coverage](https://scrutinizer-ci.com/g/bobsta63/cartographer/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/bobsta63/cartographer/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bobsta63/cartographer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bobsta63/cartographer/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/allebb/cartographer/badges/build.png?b=master)](https://scrutinizer-ci.com/g/allebb/cartographer/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/allebb/cartographer/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/allebb/cartographer/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/allebb/cartographer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/allebb/cartographer/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/ballen/cartographer/v/stable)](https://packagist.org/packages/ballen/cartographer)
 [![Latest Unstable Version](https://poser.pugx.org/ballen/cartographer/v/unstable)](https://packagist.org/packages/ballen/cartographer)
 [![License](https://poser.pugx.org/ballen/cartographer/license)](https://packagist.org/packages/ballen/cartographer)
@@ -23,7 +23,7 @@ This library is unit tested against PHP 5.5, 5.6, 7.0 and HHVM!
 License
 -------
 
-This client library is released under the [GPLv3](https://raw.githubusercontent.com/bobsta63/cartographer/master/LICENSE) license, you are welcome to use it, improve it and contribute your changes back!
+This client library is released under the [GPLv3](https://raw.githubusercontent.com/allebb/cartographer/master/LICENSE) license, you are welcome to use it, improve it and contribute your changes back!
 
 Installation
 ------------
@@ -57,7 +57,7 @@ echo $point->generate();
 // {"type":"Point","coordinates":[1.045936,52.005523]}
 ```
 
-Check out the GitHub Gist rendition of the GeoJSON output: https://gist.github.com/bobsta63/55f059efbd708be130112b6d39b16406
+Check out the GitHub Gist rendition of the GeoJSON output: https://gist.github.com/allebb/55f059efbd708be130112b6d39b16406
 
 ### Linestring
 
@@ -85,7 +85,7 @@ echo $linestring->generate();
 // {"type":"LineString","coordinates":[[1.044497,51.973683],[1.044134,51.974067],[1.045795,51.974355],[1.049768,51.97501],[1.055869,51.976018],[1.05606,51.976195],[1.056083,51.976432],[1.056036,51.976774],[1.056115,51.977023],[1.056379,51.977107],[1.056658,51.977102]]}
 ```
 
-Check out the GitHub Gist rendition of the GeoJSON output: https://gist.github.com/bobsta63/ec422a00b877e28a3d6913df68c5954c
+Check out the GitHub Gist rendition of the GeoJSON output: https://gist.github.com/allebb/ec422a00b877e28a3d6913df68c5954c
 
 #### Polygon
 
@@ -111,7 +111,7 @@ echo $linestring->generate();
 // {"type":"Polygon","coordinates":[[[1.17447,52.064761],[1.176098,52.065045],[1.176156,52.064964],[1.177106,52.065172],[1.177594,52.064146],[1.176768,52.063968],[1.174875,52.063714],[1.17447,52.064761]]]}
 ```
 
-Check out the GitHub Gist rendition of the GeoJSON object: https://gist.github.com/bobsta63/30dd0db2a33b763309e64af8cfe3e33c
+Check out the GitHub Gist rendition of the GeoJSON object: https://gist.github.com/allebb/30dd0db2a33b763309e64af8cfe3e33c
 
 #### Feature
 
@@ -138,7 +138,7 @@ echo $feature->generate();
 // {"type":"Feature","geometry":{"type":"Point","coordinates":[1.157385,52.063186]},"properties":{"Park":"Christchurch Park","Post code":"IP4 2BX","Link":"http:\/\/focp.org.uk\/","marker-color":"#3bb2d0","marker-symbol":"park","marker-size":"large"}}
 ```
 
-Check out the GitHub Gist rendition of the GeoJSON output: https://gist.github.com/bobsta63/a1dfa013273cc75ce061a13250ae6683
+Check out the GitHub Gist rendition of the GeoJSON output: https://gist.github.com/allebb/a1dfa013273cc75ce061a13250ae6683
 
 #### Feature Collection
 
@@ -178,11 +178,11 @@ echo $collection->generate();
 // {"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[1.143012,52.050743]},"properties":{"marker-color":"#F6546A","marker-symbol":"rail","marker-size":"medium","Name":"Ipswich Train Station"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[1.157385,52.063186]},"properties":{"Park":"Christchurch Park","Post code":"IP4 2BX","Link":"http:\/\/focp.org.uk\/","marker-color":"#3bb2d0","marker-symbol":"park","marker-size":"large"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[1.166773,52.081026]},"properties":{"marker-color":"#F6546A","marker-symbol":"rail","marker-size":"medium","Name":"Westerfield Train Station"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[1.182638,52.050808]},"properties":{"marker-color":"#F6546A","marker-symbol":"rail","marker-size":"medium","Name":"Derby Road Station"}}]}
 ```
 
-Check out the GitHub Gist rendition of the GeoJSON output: https://gist.github.com/bobsta63/1802d538814ed0875ab05060a439b774
+Check out the GitHub Gist rendition of the GeoJSON output: https://gist.github.com/allebb/1802d538814ed0875ab05060a439b774
 
 #### Other examples
 
-Other examples of the types of GeoJSON object type, see the [examples/test.php](https://github.com/bobsta63/cartographer/blob/master/examples/test.php) file.
+Other examples of the types of GeoJSON object type, see the [examples/test.php](https://github.com/allebb/cartographer/blob/master/examples/test.php) file.
 
 Tests and coverage
 ------------------
