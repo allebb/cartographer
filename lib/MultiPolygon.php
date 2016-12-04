@@ -1,5 +1,4 @@
 <?php
-
 namespace Ballen\Cartographer;
 
 use Ballen\Cartographer\Core\GeoJSON;
@@ -14,8 +13,8 @@ use Ballen\Collection\Collection;
  *
  * @author Bobby Allen <ballen@bobbyallen.me>
  * @license http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://github.com/bobsta63/cartographer
- * @link http://www.bobbyallen.me
+ * @link https://github.com/allebb/cartographer
+ * @link http://bobbyallen.me
  *
  */
 class MultiPolygon extends GeoJSON
@@ -42,9 +41,9 @@ class MultiPolygon extends GeoJSON
         $this->polygons = new Collection;
 
         if (is_array($init)) {
-            array_walk($init, function($i) {
-                if (is_a($i, Polygon::class)) {
-                    $this->addPolygon($i);
+            array_walk($init, function($item) {
+                if (is_a($item, Polygon::class)) {
+                    $this->addPolygon($item);
                 }
             });
         }
@@ -69,8 +68,8 @@ class MultiPolygon extends GeoJSON
     {
         $polygons = [];
 
-        foreach ($this->polygons->all()->toArray() as $p) {
-            $polygons[] = $p->exportArray();
+        foreach ($this->polygons->all()->toArray() as $polygon) {
+            $polygons[] = $polygon->exportArray();
         }
         return [
             'coordinates' => $polygons,

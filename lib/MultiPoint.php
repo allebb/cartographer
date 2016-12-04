@@ -1,5 +1,4 @@
 <?php
-
 namespace Ballen\Cartographer;
 
 use Ballen\Cartographer\Core\GeoJSON;
@@ -14,8 +13,8 @@ use Ballen\Collection\Collection;
  *
  * @author Bobby Allen <ballen@bobbyallen.me>
  * @license http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://github.com/bobsta63/cartographer
- * @link http://www.bobbyallen.me
+ * @link https://github.com/allebb/cartographer
+ * @link http://bobbyallen.me
  *
  */
 class MultiPoint extends GeoJSON
@@ -42,15 +41,15 @@ class MultiPoint extends GeoJSON
 
         if (is_array($init)) {
             array_walk($init, function($i) {
-                if (is_a($i, LatLong::class)) {
-                    $this->addCoordinate($i);
+                if (is_a($item, LatLong::class)) {
+                    $this->addCoordinate($item);
                 }
             });
         }
     }
 
     /**
-     * Add a new coordinate to the LineString seqence.
+     * Add a new coordinate to the LineString sequence.
      * @param LatLong $coordinate
      */
     public function addCoordinate(LatLong $coordinate)
@@ -65,8 +64,8 @@ class MultiPoint extends GeoJSON
     public function export()
     {
         $coords = [];
-        foreach ($this->coordinates->all()->toArray() as $c) {
-            $coords[] = $c->lngLatArray();
+        foreach ($this->coordinates->all()->toArray() as $coord) {
+            $coords[] = $coord->lngLatArray();
         }
 
         return [

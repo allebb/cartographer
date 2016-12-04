@@ -19,7 +19,7 @@ Requirements
 
 * PHP >= 5.5.0
 
-This library is unit tested against PHP 5.5, 5.6, 7.0 and HHVM!
+This library is unit tested against PHP 5.5, 5.6, 7.0, 7.1 and HHVM!
 
 License
 -------

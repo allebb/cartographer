@@ -1,12 +1,9 @@
 <?php
-
 namespace Ballen\Cartographer;
 
 use Ballen\Cartographer\Core\GeoJSONTypeInterface;
 use Ballen\Cartographer\Core\Multipliable;
 use Ballen\Cartographer\Core\GeoJSON;
-use Ballen\Cartographer\Core\LinearRing;
-use Ballen\Collection\Collection;
 
 /**
  * Cartographer
@@ -16,8 +13,8 @@ use Ballen\Collection\Collection;
  *
  * @author Bobby Allen <ballen@bobbyallen.me>
  * @license http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://github.com/bobsta63/cartographer
- * @link http://www.bobbyallen.me
+ * @link https://github.com/allebb/cartographer
+ * @link http://bobbyallen.me
  *
  */
 class Feature extends GeoJSON implements GeoJSONTypeInterface

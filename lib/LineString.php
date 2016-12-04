@@ -1,5 +1,4 @@
 <?php
-
 namespace Ballen\Cartographer;
 
 use Ballen\Cartographer\Core\GeoJSONTypeInterface;
@@ -16,8 +15,8 @@ use Ballen\Collection\Collection;
  *
  * @author Bobby Allen <ballen@bobbyallen.me>
  * @license http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://github.com/bobsta63/cartographer
- * @link http://www.bobbyallen.me
+ * @link https://github.com/allebb/cartographer
+ * @link http://bobbyallen.me
  *
  */
 class LineString extends GeoJSON implements GeoJSONTypeInterface, Multipliable
@@ -43,16 +42,16 @@ class LineString extends GeoJSON implements GeoJSONTypeInterface, Multipliable
         $this->coordinates = new Collection;
 
         if (is_array($init)) {
-            array_walk($init, function($i) {
-                if (is_a($i, LatLong::class)) {
-                    $this->addCoordinate($i);
+            array_walk($init, function($item) {
+                if (is_a($item, LatLong::class)) {
+                    $this->addCoordinate($item);
                 }
             });
         }
     }
 
     /**
-     * Add a new coordinate to the LineString seqence.
+     * Add a new coordinate to the LineString sequence.
      * @param LatLong $coordinate
      */
     public function addCoordinate(LatLong $coordinate)
@@ -83,8 +82,8 @@ class LineString extends GeoJSON implements GeoJSONTypeInterface, Multipliable
     public function exportArray()
     {
         $coords = [];
-        foreach ($this->coordinates->all()->toArray() as $c) {
-            $coords[] = $c->lngLatArray();
+        foreach ($this->coordinates->all()->toArray() as $coord) {
+            $coords[] = $coord->lngLatArray();
         }
         return $coords;
     }
@@ -99,7 +98,6 @@ class LineString extends GeoJSON implements GeoJSONTypeInterface, Multipliable
         if ($this->coordinates->count() < 2) {
             return false;
         }
-
         return true;
     }
 }

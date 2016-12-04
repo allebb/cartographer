@@ -1,5 +1,4 @@
 <?php
-
 namespace Ballen\Cartographer;
 
 use Ballen\Cartographer\Core\GeoJSONTypeInterface;
@@ -15,8 +14,8 @@ use Ballen\Collection\Collection;
  *
  * @author Bobby Allen <ballen@bobbyallen.me>
  * @license http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://github.com/bobsta63/cartographer
- * @link http://www.bobbyallen.me
+ * @link https://github.com/allebb/cartographer
+ * @link http://bobbyallen.me
  *
  */
 class FeatureCollection extends GeoJSON implements GeoJSONTypeInterface
@@ -39,9 +38,9 @@ class FeatureCollection extends GeoJSON implements GeoJSONTypeInterface
         $this->features = new Collection;
 
         if (is_array($init)) {
-            array_walk($init, function($i) {
-                if (is_a($i, Feature::class)) {
-                    $this->addFeature($i);
+            array_walk($init, function($item) {
+                if (is_a($item, Feature::class)) {
+                    $this->addFeature($item);
                 }
             });
         }

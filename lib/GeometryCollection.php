@@ -1,10 +1,8 @@
 <?php
-
 namespace Ballen\Cartographer;
 
 use Ballen\Cartographer\Core\GeoJSONTypeInterface;
 use Ballen\Cartographer\Core\GeoJSON;
-use Ballen\Cartographer\Core\LatLong;
 use Ballen\Collection\Collection;
 
 /**
@@ -15,12 +13,13 @@ use Ballen\Collection\Collection;
  *
  * @author Bobby Allen <ballen@bobbyallen.me>
  * @license http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://github.com/bobsta63/cartographer
- * @link http://www.bobbyallen.me
+ * @link https://github.com/allebb/cartographer
+ * @link http://bobbyallen.me
  *
  */
 class GeometryCollection extends GeoJSON implements GeoJSONTypeInterface
 {
+
     /**
      * The GeoJSON schema type
      * @var string
@@ -38,9 +37,9 @@ class GeometryCollection extends GeoJSON implements GeoJSONTypeInterface
         $this->geometries = new Collection;
 
         if (is_array($init)) {
-            array_walk($init, function($i) {
-                if (is_a($i, GeoJSONTypeInterface::class)) {
-                    $this->addGeometry($i);
+            array_walk($init, function($item) {
+                if (is_a($item, GeoJSONTypeInterface::class)) {
+                    $this->addGeometry($item);
                 }
             });
         }
@@ -62,7 +61,7 @@ class GeometryCollection extends GeoJSON implements GeoJSONTypeInterface
     public function export()
     {
         $geometries = [];
-        foreach($this->geometries->all()->toArray() as $gemometry){
+        foreach ($this->geometries->all()->toArray() as $gemometry) {
             $geometries[] = $gemometry->generateMember();
         }
         return [
