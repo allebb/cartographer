@@ -3,7 +3,7 @@
     "description": "Cartographer is a PHP library for constructing GeoJSON objects.",
     "type": "library",
     "keywords": ["geojson", "cartographer"],
-    "license": "GPLv3",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Bobby Allen",
