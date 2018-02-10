@@ -116,7 +116,7 @@ Check out the GitHub Gist rendition of the GeoJSON object: https://gist.github.c
 
 #### Feature
 
-A feature enables you to plot a single GeoJSON object on a map with associated properties, Google Maps enable you to render ``Feture`` and ``FeatureCollection`` types.
+A feature enables you to plot a single GeoJSON object on a map with associated properties, Google Maps enable you to render ``Feature`` and ``FeatureCollection`` types.
 
 A example of a ``Point`` feature type is as follows:
 
