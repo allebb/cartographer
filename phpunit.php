@@ -4,8 +4,4 @@
  * UTILISE THE PACKAGE CLASSES IN THE TEST CLASSES.
  */
 
-
-// Sets the PHP precision to match our testing environment requirements.
-ini_set('precision', 10);
-
 require __DIR__ . '/vendor/autoload.php';

@@ -20,7 +20,7 @@ class PolygonTest extends PHPUnit_Framework_TestCase
             $linearRing->addRing($poly);
         }
         $polygon = new Polygon($linearRing);
-        $this->assertEquals('{"type":"Polygon","coordinates":[[[-109.0283203125,36.985003092856],[-109.0283203125,40.97989806962],[-102.06298828125,40.97989806962],[-102.06298828125,37.00255267216],[-109.0283203125,36.985003092856]]]}', $polygon->generate());
+        $this->assertEquals('{"type":"Polygon","coordinates":[[[-109.0283203125,36.98500309285596],[-109.0283203125,40.97989806962013],[-102.06298828125,40.97989806962013],[-102.06298828125,37.00255267215955],[-109.0283203125,36.98500309285596]]]}', $polygon->generate());
     }
 
     public function testExportPolygonArray()
