@@ -48,7 +48,7 @@ class FeatureCollection extends GeoJSON implements GeoJSONTypeInterface
 
     /**
      * Add a new Feature object to the FeatureCollection.
-     * @param Feature $geometry
+     * @param Feature $feature
      */
     public function addFeature(Feature $feature)
     {

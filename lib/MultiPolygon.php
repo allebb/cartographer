@@ -34,7 +34,6 @@ class MultiPolygon extends GeoJSON
 
     /**
      * Create a new instance of the MultiPolygon GeoJSON schema
-     * @param array $linestrings
      */
     public function __construct($init = null)
     {

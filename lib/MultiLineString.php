@@ -35,7 +35,6 @@ class MultiLineString extends GeoJSON implements GeoJSONTypeInterface
 
     /**
      * Create a new instance of the MultiPointString GeoJSON schema
-     * @param array $linestrings
      */
     public function __construct($init = [])
     {
