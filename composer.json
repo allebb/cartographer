@@ -2,7 +2,7 @@
     "name": "ballen/cartographer",
     "description": "Cartographer is a PHP library for constructing GeoJSON objects.",
     "type": "library",
-    "keywords": ["geojson", "cartographer"],
+    "keywords": ["geojson", "cartographer", "geo json"],
     "license": "GPL-3.0-or-later",
     "authors": [
         {
