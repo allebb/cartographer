@@ -1,6 +1,6 @@
 # Cartographer
 
-![Build](https://github.com/allebb/cartographer/workflows/build/badge.svg)](https://github.com/allebb/cartographer/actions)
+[![Build](https://github.com/allebb/cartographer/workflows/build/badge.svg)](https://github.com/allebb/cartographer/actions)
 [![Code Coverage](https://codecov.io/gh/allebb/cartographer/branch/master/graph/badge.svg)](https://codecov.io/gh/allebb/cartographer)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/allebb/cartographer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/allebb/cartographer/?branch=master)
 [![Code Climate](https://codeclimate.com/github/allebb/cartographer/badges/gpa.svg)](https://codeclimate.com/github/allebb/cartographer)
