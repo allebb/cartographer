@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "php": ">=5.5.0",
+        "php": ">=7.2.0",
         "ext-json":  "*",
         "ballen/collection": "^1.0",
         "ballen/distical": "~2.0"

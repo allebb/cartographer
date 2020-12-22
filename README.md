@@ -1,7 +1,7 @@
 # Cartographer
 
-[![Build Status](https://scrutinizer-ci.com/g/allebb/cartographer/badges/build.png?b=master)](https://scrutinizer-ci.com/g/allebb/cartographer/build-status/master)
-[![Code Coverage](https://scrutinizer-ci.com/g/allebb/cartographer/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/allebb/cartographer/?branch=master)
+![Build](https://github.com/allebb/cartographer/workflows/build/badge.svg)](https://github.com/allebb/cartographer/actions)
+[![Code Coverage](https://codecov.io/gh/allebb/cartographer/branch/master/graph/badge.svg)](https://codecov.io/gh/allebb/cartographer)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/allebb/cartographer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/allebb/cartographer/?branch=master)
 [![Code Climate](https://codeclimate.com/github/allebb/cartographer/badges/gpa.svg)](https://codeclimate.com/github/allebb/cartographer)
 [![Latest Stable Version](https://poser.pugx.org/ballen/cartographer/v/stable)](https://packagist.org/packages/ballen/cartographer)
@@ -17,9 +17,9 @@ Cartographer was written to adhear to the GeoJSON specification, information can
 Requirements
 ------------
 
-* PHP >= 5.5.0
+* PHP >= 7.2.0
 
-This library is unit tested against PHP 5.6, 7.0, 7.1, 7.2, 7.3 and 7.4!
+This library is unit tested against PHP 7.2, 7.3 and 7.4!
 
 License
 -------
@@ -34,13 +34,6 @@ The recommended way of installing this library is via. [Composer](http://getcomp
 ```shell
 composer require ballen/cartographer
 ```
-
-Alternately you can add it to your ``composer.json`` file manually in the `require` section like so:
-
-```php
-"ballen/cartographer": "^1.0"
-```
-Then install the package by running the ``composer update ballen/cartographer`` command.
 
 Example usage
 -------------
@@ -190,7 +183,7 @@ Tests and coverage
 
 This library is fully unit tested using [PHPUnit](https://phpunit.de/).
 
-I use [TravisCI](https://travis-ci.org/) for continuous integration, which triggers tests for PHP 5.6, 7.0, 7.1, 7.2, 7.3 and 7.4 each time a commit is pushed.
+I use [GitHub Actions](https://github.com/) for continuous integration, which triggers tests for PHP 7.2, 7.3 and 7.4 each time a commit is pushed.
 
 If you wish to run the tests yourself you should run the following:
 
