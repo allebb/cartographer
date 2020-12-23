@@ -2,8 +2,9 @@
 use Ballen\Cartographer\LineString;
 use Ballen\Cartographer\Feature;
 use Ballen\Cartographer\Core\LatLong;
+use PHPUnit\Framework\TestCase;
 
-class FeatureTest extends PHPUnit_Framework_TestCase
+class FeatureTest extends TestCase
 {
 
     private $geometry;
@@ -13,7 +14,7 @@ class FeatureTest extends PHPUnit_Framework_TestCase
     ];
     private $linestringCoords;
 
-    public function setUp()
+    public function setUp() : void
     {
         // Setup a test LineString object.
         $this->linestringCoords = [

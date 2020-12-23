@@ -1,8 +1,9 @@
 <?php
 use Ballen\Cartographer\LineString;
 use Ballen\Cartographer\Core\LatLong;
+use PHPUnit\Framework\TestCase;
 
-class LineStringTest extends PHPUnit_Framework_TestCase
+class LineStringTest extends TestCase
 {
 
     public function testLineString()
@@ -20,7 +21,7 @@ class LineStringTest extends PHPUnit_Framework_TestCase
     public function testLineStringLessThanTwoCoords()
     {
 
-        $this->setExpectedException(\Ballen\Cartographer\Exceptions\TypeSchemaValidationException::class);
+        $this->expectException(\Ballen\Cartographer\Exceptions\TypeSchemaValidationException::class);
         $testCoords = [
             new LatLong(51.51259, -0.12514),
         ];

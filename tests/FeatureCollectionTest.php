@@ -3,8 +3,9 @@ use Ballen\Cartographer\LineString;
 use Ballen\Cartographer\Feature;
 use Ballen\Cartographer\FeatureCollection;
 use Ballen\Cartographer\Core\LatLong;
+use PHPUnit\Framework\TestCase;
 
-class FeatureCollectionTest extends PHPUnit_Framework_TestCase
+class FeatureCollectionTest extends TestCase
 {
 
     private $collection;
@@ -15,7 +16,7 @@ class FeatureCollectionTest extends PHPUnit_Framework_TestCase
     ];
     private $linestringCoords;
 
-    public function setUp()
+    public function setUp() : void
     {
         // Setup a test LineString object.
         $this->linestringCoords = [
@@ -46,7 +47,7 @@ class FeatureCollectionTest extends PHPUnit_Framework_TestCase
 
     public function testFeatureCollectionValidationFailure()
     {
-        $this->setExpectedException(\Ballen\Cartographer\Exceptions\TypeSchemaValidationException::class);
+        $this->expectException(\Ballen\Cartographer\Exceptions\TypeSchemaValidationException::class);
         $emptyCollection = new FeatureCollection();
         $emptyCollection->generate();
     }

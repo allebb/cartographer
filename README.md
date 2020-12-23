@@ -12,14 +12,14 @@ Cartographer is a PHP library providing the ability to programmatically generate
 
 GeoJSON is a format for encoding a variety of geographic data structures. A GeoJSON object may represent a geometry, a feature, or a collection of features. GeoJSON supports the following geometry types: ``Point``, ``LineString``, ``Polygon``, ``MultiPoint``, ``MultiLineString``, ``MultiPolygon``, and ``GeometryCollection``. Features in GeoJSON contain a geometry object and additional properties, and a feature collection represents a list of features.
 
-Cartographer was written to adhear to the GeoJSON specification, information can be found here: http://geojson.org/geojson-spec.html
+Cartographer was written to adhere to the GeoJSON specification, information can be found here: http://geojson.org/geojson-spec.html
 
 Requirements
 ------------
 
-* PHP >= 7.2.0
+* PHP >= 7.3.0
 
-This library is unit tested against PHP 7.2, 7.3 and 7.4!
+This library is unit tested against PHP 7.3, 7.4 and 8.0!
 
 License
 -------
@@ -33,6 +33,12 @@ The recommended way of installing this library is via. [Composer](http://getcomp
 
 ```shell
 composer require ballen/cartographer
+```
+
+**If you need to use an older version of PHP, version 1.x.x supports PHP 5.3, 5.4, 5.5, 5.6, 7.0, 7.1 and 7.2, you can install this version using Composer with this command instead:**
+
+```shell
+composer require ballen/cartographer ^1.0
 ```
 
 Example usage
@@ -183,7 +189,7 @@ Tests and coverage
 
 This library is fully unit tested using [PHPUnit](https://phpunit.de/).
 
-I use [GitHub Actions](https://github.com/) for continuous integration, which triggers tests for PHP 7.2, 7.3 and 7.4 each time a commit is pushed.
+I use [GitHub Actions](https://github.com/) for continuous integration, which triggers tests for PHP 7.3, 7.4 and 8.0 each time a commit is pushed.
 
 If you wish to run the tests yourself you should run the following:
 
@@ -195,7 +201,7 @@ composer install
 ./vendor/bin/phpunit
 ```
 
-Code coverage can also be ran and a report generated (this does require XDebug to be installed)...
+Code coverage can also be run, and a report generated (this does require XDebug to be installed)...
 
 ```shell
 ./vendor/bin/phpunit --coverage-html ./report
